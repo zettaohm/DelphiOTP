@@ -10,7 +10,10 @@ unit GoogleOTP;
 interface
 
 uses
-  {$IFNDEF FPC}System.{$ENDIF}SysUtils, {$IFNDEF FPC}System.{$ENDIF}Math, Base32U, {$IFNDEF FPC}System.{$ENDIF}DateUtils
+  {$IFNDEF FPC}System.SysUtils{$ELSE}SysUtils{$ENDIF},
+  {$IFNDEF FPC}System.Math{$ELSE}Math{$ENDIF},
+  Base32U,
+  {$IFNDEF FPC}System.DateUtils{$ELSE}DateUtils{$ENDIF}
   {$IFNDEF FPC}
     , IdGlobal, IdHMACSHA1
   {$ELSE}
